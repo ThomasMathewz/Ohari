@@ -1,0 +1,95 @@
+{% include "user/user_header.html" %}
+
+
+    <style>
+        /* Custom styles */
+        .news-container {
+            margin-left: 250px; /* Adjust this based on your sidebar width */
+            padding: 20px;
+            padding-left: 20px;
+        }
+        * {
+            text-decoration: none;
+        }
+        
+        .news-card {
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+        .news-card:hover {
+            transform: scale(1.02);
+        }
+        .news-card img {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .news-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+        /* Styling for the dropdown */
+        .dropdown-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .styled-dropdown {
+            width: 250px;
+            padding: 8px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            background-color: #fff;
+            font-size: 16px;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        .styled-dropdown:hover {
+            border-color: #0056b3;
+        }
+    </style>
+
+
+            <div class="container news-container" style="width: 80%;padding-left:90px;padding-right:30px;">
+                <h1 class="mb-5 d-flex justify-content-center ">📈 Latest Stock Market News</h1>
+                
+                <!-- Drop-down form to select a company -->
+                <div class="dropdown-container">
+                    <form method="GET">
+                        <label for="company"><strong>Select a company:</strong></label>
+                        <select name="company" id="company" class="styled-dropdown" onchange="this.form.submit()">
+                            <option value="stock market">All Companies</option>
+                            {% for company in companies %}
+                                <option value="{{ company }}" {% if selected_company == company %}selected{% endif %}>
+                                    {{ company }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </form>
+                </div>
+                <div class="row">
+                    {% for article in articles %}
+                        <div class="col-md-6 mb-4">
+                            <div class="card news-card">
+                                {% if article.urlToImage %}
+                                    <img src="{{ article.urlToImage }}" class="card-img-top" alt="News Image">
+                                {% endif %}
+                                <div class="card-body">
+                                    <h5 class="news-title">{{ article.title }}</h5>
+                                    <p class="card-text">{{ article.description }}</p>
+                                    <a href="{{ article.url }}" class="btn btn-primary btn-sm" target="_blank">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        
+<!-- Bootstrap JS (Optional) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+{% include "public/public_footer.html" %}

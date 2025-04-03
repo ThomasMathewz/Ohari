@@ -1,0 +1,84 @@
+{% include "user/user_header.html" %}
+<!-- <center>
+<h1>View Your Profile</h1>
+<br>
+    <table border="1">
+        <tr>
+            <td>
+                <img src="/static/media/{{data.profile}}" alt="" width="100px" height="100px" >
+            </td>
+        </tr>
+        <tr>
+            <th>User Name </th>
+            <td>: {{ data.LOGIN.username }}</td>
+            </tr>  
+        <tr>
+            <th >First Name </th>
+            <td>:{{ data.first_name }}</td>
+        </tr>
+        <tr>
+            <th>Last Name </th>
+            <td>: {{ data.last_name }}</td>
+        </tr>
+        <tr>
+            <th>Email </th>
+            <td>: {{ data.email }}</td>
+        </tr>
+        <tr>
+            <th>Phone Number </th>
+            <td>: {{ data.phone }}</td>
+        </tr>
+        <tr>
+            <th>Gender </th>
+            <td>: {{ data.gender }}</td>
+        </tr>
+    </table>
+<br>
+<a href="/user_edit_profile">Edit Profile</a>
+</center> -->
+<div class="container mt-5 d-flex justify-content-center " style="width: 80%;margin-left:250px;padding-left:70px;">
+    <div class="card shadow-lg border-0" style="width: 60%;">
+        <div class="card-header bg-gradient-primary text-white text-center py-4">
+            <h2 class="mb-0">View Your Profile</h2>
+        </div>
+        <div class="card-body p-4">
+            <div class="text-center mb-4">
+                <img src="/static/media/{{ data.profile }}" alt="Profile Picture" class="rounded-circle border mb-3" width="150" height="150">
+            </div>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th>User Name</th>
+                        <td>{{ data.LOGIN.username }}</td>
+                    </tr>
+                    <tr>
+                        <th>First Name</th>
+                        <td>{{ data.first_name }}</td>
+                    </tr>
+                    <tr>
+                        <th>Last Name</th>
+                        <td>{{ data.last_name }}</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>{{ data.email }}</td>
+                    </tr>
+                    <tr>
+                        <th>Phone Number</th>
+                        <td>{{ data.phone }}</td>
+                    </tr>
+                    <tr>
+                        <th>Gender</th>
+                        <td>{{ data.gender }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-center mt-4">
+                <a href="/user_edit_profile" class="btn btn-primary px-5">Edit Profile</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% include "public/public_footer.html" %}

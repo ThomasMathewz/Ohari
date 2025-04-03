@@ -1,0 +1,141 @@
+{% include "admin/admin_header.html" %}
+    <!-- <h1>View Complaints</h1>
+    <table border="1">
+        <tr>
+            <th>User ID</th>
+            <th>Date</th>
+            <th>Complaint</th>
+            <th>Reply</th>
+        </tr>
+        {% for i in a %}
+        <tr>
+            <td>{{ i.USER_id }}</td>
+            <td>{{ i.date }}</td>
+            <td>{{ i.complaint }}</td>
+            <td>{{ i.reply }}</td>
+            {% if i.reply == "pending" %}
+            <td>
+                <a href="/admin_send_reply/{{ i.id }}">send reply</a>
+            </td>
+        {% endif %}
+        </tr>
+        {% endfor %}
+    </table> -->
+
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General Body Styling */
+        body {
+            background-color: #f8f9fa; /* Light background */
+            font-family: 'Poppins', sans-serif; /* Modern font */
+        }
+
+        /* Header Styling */
+        h1 {
+            color: #2c3e50;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Table Styling */
+        .table {
+            margin-top: 30px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .table thead {
+            background-color: #4e73df; /* Primary theme color */
+            color: white;
+        }
+
+        .table tbody tr:nth-of-type(odd) {
+            background-color: #f2f2f2;
+        }
+
+        .table tbody tr:hover {
+            background-color: #e9ecef;
+        }
+
+        /* Button Styling */
+        .btn-primary {
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #004085;
+            color: white;
+        }
+
+        /* Container Styling */
+        .container {
+            padding: 20px;
+        }
+
+        /* Footer Styling */
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #6c757d;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    {% include "admin/admin_header.html" %}
+
+    <!-- Main Content -->
+    <div class="container" style="width: 900px; margin-right:175px;">
+        <h1>View Complaints</h1>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Date</th>
+                        <th>Complaint</th>
+                        <th>Reply</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in a %}
+                    <tr>
+                        <td>{{ i.USER_id }}</td>
+                        <td>{{ i.date }}</td>
+                        <td>{{ i.complaint }}</td>
+                        <td>
+                            {% if i.reply == "pending" %}
+                            <span class="text-warning fw-bold">{{ i.reply }}</span>
+                            {% else %}
+                            <span class="text-success fw-bold">{{ i.reply }}</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if i.reply == "pending" %}
+                            <a href="/admin_send_reply/{{ i.id }}" class="btn btn-primary btn-sm">Send Reply</a>
+                            {% else %}
+                            <span class="text-muted">No Action Needed</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <br>
+    <br>
+
+{% include "public/public_footer.html" %}

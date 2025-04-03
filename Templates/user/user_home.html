@@ -1,0 +1,61 @@
+{% include "user/user_header.html" %}
+
+<div class="container mt-5 d-flex justify-content-center " style="margin-left:220px; padding-left: 50px;">
+    <div class="card shadow-lg border-0" style="width: 95%; margin: 0 auto" >
+            <h1 class="text-primary fw-bold text-center">🏠 Home</h1>
+            <hr>
+            <h2 class="mt-3 text-dark text-center">Hello, <span class="text-success">{{ name }}</span> 👋</h2>
+    </div>
+</div>
+
+<div class="container mt-5" style="margin-left:220px; padding-left: 50px;">
+    <!-- <h1 class="text-primary">📊 User Dashboard</h1> -->
+
+    <!-- Stock Prices Section -->
+    <div class="card mt-4">
+        <div class="card-header bg-secondary text-white">
+            <h3>📈 Latest Stock Prices</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Stock</th>
+                        <th>Price (USD)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for symbol, price in stock_prices.items %}
+                        <tr>
+                            <td>{{ symbol }}</td>
+                            <td>${{ price }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- News Section -->
+    <div class="card mt-4">
+        <div class="card-header bg-success text-white">
+            <h3>📢 Latest Market News</h3>
+        </div>
+        <div class="card-body">
+            {% for article in articles %}
+                <div class="mb-3">
+                    <h5>{{ article.title }}</h5>
+                    <p>{{ article.description }}</p>
+                    <a href="{{ article.url }}" target="_blank" class="btn btn-sm btn-outline-success">Read More</a>
+                    <hr>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="/user_view_news" class="btn btn-primary">Read More</a>
+
+    </div>
+   
+</div>
+
+
+{% include "public/public_footer.html" %}

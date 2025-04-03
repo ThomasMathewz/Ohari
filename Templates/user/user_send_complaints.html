@@ -1,0 +1,46 @@
+{% include "user/user_header.html" %}
+    <!-- <h1>Send Complaints</h1>
+
+<form action="" method="post">
+<table>
+<tr>
+    <th align="left">Send Complaint</th>
+</tr>
+<tr>
+    <td> <textarea name="complaint" rows="10" cols="50" placeholder="Enter your complaint"></textarea></td> 
+    
+</tr>
+    <td align="left"><input type="submit" name="submit"></td>
+</tr>
+</table>
+</form>
+<br>
+<a href="/user_view_reply">View Replies</a> -->
+
+<div class="container mt-4"style="width:80%;margin-left:250px;margin-top:250px;padding-top:50px;">
+    <div class="card shadow-lg border-0" style="width: 50%; margin: 0 auto;">
+        <div class="card-header bg-gradient-primary text-white text-center py-3">
+            <br>
+            <br>
+            <h3 class="mb-0">Send Complaints</h3>
+        </div>
+        <div class="card-body p-4">
+            <form action="" method="post">
+                <div class="mb-3">
+                    <label for="complaint" class="form-label">Your Complaint</label>
+                    <textarea name="complaint" id="complaint" class="form-control shadow-sm" rows="6" placeholder="Enter your complaint"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" name="submit" class="btn btn-primary px-4 shadow">Submit</button>
+                </div>
+            </form>
+            <br>
+            <div class="text-center">
+                <a href="/user_view_reply" class="btn btn-primary px-4 shadow">View Replies</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% include "public/public_footer.html" %}

@@ -1,0 +1,42 @@
+{% include "admin/admin_header.html" %}
+    <!-- <h1>Send Reply</h1>
+    
+<form action="" method="post">
+    <table>
+    <tr>
+        <th align="left">Send Reply</th>
+    </tr>
+    <tr>
+        <td> <textarea name="reply" rows="10" cols="50" placeholder="Enter your reply"></textarea></td> 
+        
+    </tr>
+    <tr>
+        <th></th>
+        <td align="left"><input type="submit" name="send"></td>
+    </tr>
+    </table>
+    </form> -->
+
+    <main class="d-flex justify-content-center align-items-center vh-100">
+        <div class="card shadow-lg" style="width: 500px; margin-left: 50px;">
+            <div class="card-body">
+                <h1 class="h4 text-center mb-4">Send Reply</h1>
+                <form action="" method="post">
+                    <div class="mb-3">
+                        <label for="reply" class="form-label">Your Reply</label>
+                        <textarea 
+                            name="reply" 
+                            id="reply" 
+                            rows="6" 
+                            class="form-control" 
+                            placeholder="Enter your reply here..."
+                            style="resize: none;"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-lg px-4" name="send">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+{% include "public/public_footer.html" %}

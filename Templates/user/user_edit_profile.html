@@ -1,0 +1,113 @@
+{% include "user/user_header.html" %}
+<!-- <center>
+<h1>Edit Profile</h1>
+<br>
+<form  method="post" enctype="multipart/form-data">
+
+    <table>
+        <tr rowspan="2" align="center">
+            <td >
+                <img align="centre" src="/static/media/{{data.profile}}" alt="" width="100px" height="100px" >
+            </td>
+            <td>
+                <input type="file" id="profile" name="profile" >
+            </td>
+        </tr>
+        <tr>
+            <th >First Name </th>
+            <td><input type="text" name="first_name" value="{{ data.first_name }}" ></td>
+        </tr>
+        <tr>
+            <th>Last Name </th>
+            <td><input type="text" name="last_name " value=" {{ data.last_name  }} " ></td>
+        </tr>
+        <tr>
+            <th>Email </th>           
+            <td><input type="text" name="email" value="{{ data.email }} " ></td>
+        </tr>
+        <tr>
+            <th>Phone Number </th>
+            <td><input type="text" name="phone " value=" {{ data.phone  }} " ></td>
+        </tr>
+        <tr>
+            <th>Gender </th>
+            {% if data.gender == 'male' %}
+            <td><input type="radio" name="gender " value="male" checked>Male
+                <input type="radio" name="gender " value="female">Female
+            </td>
+            {% else %}
+            <td><input type="radio" name="gender " value="male">Male
+                <input type="radio" name="gender " value="female" checked>Female
+            </td>
+            {% endif %}
+        </tr>
+        <tr>
+            <th></th>
+            <td><input type="submit" name="submit" value="Update"></td>
+        </tr>
+    </table>
+</form>
+<br> -->
+<!-- </center> -->
+
+<div class="container mt-5 " style="margin-left:200px;padding-left:70px;">
+    <div class="card shadow-lg border-0" style="width: 60%; margin: 0 auto;">
+        <div class="card-header bg-gradient-primary text-white text-center py-3">
+            <h3 class="mb-0">Edit Profile</h3>
+        </div>
+        <div class="card-body p-4">
+            <form method="post" enctype="multipart/form-data">
+                <div class="text-center mb-4">
+                    <img src="/static/media/{{ data.profile }}" alt="Profile Picture" class="rounded-circle border border-secondary mb-2" width="120" height="120">
+                    <input type="file" id="profile" name="profile" class="form-control mt-2">
+                </div>
+
+                <div class="mb-3">
+                    <label for="first_name" class="form-label">First Name</label>
+                    <input type="text" id="first_name" name="first_name" class="form-control shadow-sm" value="{{ data.first_name }}">
+                </div>
+                <div class="mb-3">
+                    <label for="last_name" class="form-label">Last Name</label>
+                    <input type="text" id="last_name" name="last_name" class="form-control shadow-sm" value="{{ data.last_name }}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-control shadow-sm" value="{{ data.email }}">
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="text" id="phone" name="phone" class="form-control shadow-sm" value="{{ data.phone }}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Gender</label><br>
+                    {% if data.gender == 'male' %}
+                    <div class="form-check form-check-inline">
+                        <input type="radio" id="male" name="gender" value="male" class="form-check-input" checked>
+                        <label for="male" class="form-check-label">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" id="female" name="gender" value="female" class="form-check-input">
+                        <label for="female" class="form-check-label">Female</label>
+                    </div>
+                    {% else %}
+                    <div class="form-check form-check-inline">
+                        <input type="radio" id="male" name="gender" value="male" class="form-check-input">
+                        <label for="male" class="form-check-label">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" id="female" name="gender" value="female" class="form-check-input" checked>
+                        <label for="female" class="form-check-label">Female</label>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" name="submit" class="btn btn-primary px-4 shadow">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% include "public/public_footer.html" %}

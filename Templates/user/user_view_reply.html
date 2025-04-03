@@ -1,0 +1,47 @@
+{% include "user/user_header.html" %}
+    <!-- <h1>View Reply</h1>
+    <table border="1">
+        <tr>
+            <th>Complaint ID</th>
+            <th>Complaint</th>
+            <th>Reply</th>
+        </tr>
+        {% for i in reply %}
+        <tr>
+            <td>{{ i.id }}</td>
+            <td>{{ i.complaint }}</td>
+            <td>{{ i.reply }}</td>
+        </tr>
+        {% endfor %}
+    </table> -->
+<div style="min-height: 150vh;"><br><br>
+    <div class="container mt-5" style="width: 60%; margin-right:180px; margin-top:70px; margin-bottom:20px;">
+        <div class="card shadow-lg border-0">
+            <div class="card-header bg-gradient-primary text-white text-center py-3">
+                <h3 class="mb-0">View Replies</h3>
+            </div>
+            <div class="card-body p-4">
+                <table class="table table-bordered table-striped">
+                    <thead class="table-primary">
+                        <tr>
+                            <th scope="col">Complaint ID</th>
+                            <th scope="col">Complaint</th>
+                            <th scope="col">Reply</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in reply %}
+                        <tr>
+                            <td>{{ i.id }}</td>
+                            <td>{{ i.complaint }}</td>
+                            <td>{{ i.reply }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include "public/public_footer.html" %}

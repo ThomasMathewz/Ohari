@@ -1,0 +1,112 @@
+{% include "user/user_header.html" %}
+
+<br>
+<br>
+
+<div style="min-height: 150vh;"><br><br>
+    <div class="container mt-5" style="width: 60%; margin-right:180px; margin-top:70px; margin-bottom:20px;">
+        <div class="card shadow-lg border-0">
+            <div class="card-header bg-gradient-primary text-white text-center py-3">
+                <h3 class="mb-0">Predict</h3>
+            </div>
+            <form action="/predict_u/" method="post">
+            <div class="card-body p-4">
+                {% if result %}
+                    <table >
+                        <thead class="table-primary">
+
+                            Stock Name: <b id="stockName"></b>
+                                
+                        </thead>
+                        <br>
+                        <br>
+                        <thead>
+                            Next Day Price: <b>{{ result }}</b>
+                            
+                        </thead>
+                        <br>
+                        <br>
+                        <thead>
+                                <th colspan="2" class="text-center">
+                                    <img src="{{ graph_url }}" alt="Stock Price Graph" class="img-fluid" />
+                                </th>
+                        </thead>
+                    </table>
+                
+                    <!-- JavaScript to handle stock name replacement -->
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                            let data = "{{ data }}".toLowerCase(); // Convert to lowercase for consistency
+                            let stockName = "";
+                
+                            switch (data) {
+                                case "amzn":
+                                    stockName = "Amazon";
+                                    break;
+                                case "aapl":
+                                    stockName = "Apple";
+                                    break;
+                                case "meta":
+                                    stockName = "Facebook";
+                                    break;
+                                case "goog":
+                                    stockName = "Google";
+                                    break;
+                                case "ibm":
+                                    stockName = "IBM";
+                                    break;
+                                case "infy":
+                                    stockName = "Infosys";
+                                    break;
+                                case "msft":
+                                    stockName = "Microsoft";
+                                    break;
+                                case "nvda":
+                                    stockName = "Nvidia";
+                                    break;
+                                case "tsla":
+                                    stockName = "Tesla";
+                                    break;                                    
+                                default:
+                                    stockName = "{{ data }}"; // Default to original value if not matched
+                                    break;
+                            }
+                
+                            // Update the stock name dynamically
+                            document.getElementById("stockName").innerText = stockName;
+                        });
+                    </script>
+                {% else %}
+                <table class="table table-bordered table-striped">
+                    <thead class="table-primary">
+                    Stock Price </thead>
+                    <br>
+                    <br>
+                    <thead>
+                       <select name="stock" class="form-control">
+                        <option value="AMZN">Amazon</option>
+                        <option value="AAPL">Apple</option>
+                        <option value="META">Facebook</option>
+                        <option value="GOOG">Google</option>
+                        <option value="IBM">IBM</option>
+                        <option value="INFY">Infosys</option>
+                        <option value="MSFT">Microsoft</option>
+                        <option value="NVDA">Nvidia</option>
+                        <option value="TSLA">Tesla</option>
+                      </select>
+                    </thead>
+                    <br>
+                    <br>
+                    <thead>
+                        <input type="submit" value="Predict" class="btn btn-primary"/>
+                    </thead>
+                </table>
+                {% endif %}
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% include "public/public_footer.html" %}

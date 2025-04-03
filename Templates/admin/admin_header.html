@@ -1,0 +1,110 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/admin_home">Home</a>
+    <a href="/admin_change_password"> Change Password</a>
+    <a href="/admin_view_users">View Users</a>
+    <a href="/admin_view_complaints"> Complaints</a>
+    <a href="/admin_view_news"> News</a>
+    <a href="/logout"> Logout</a> -->
+
+
+    <!doctype html>
+    <html lang="en">
+    
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Ohari.com</title>
+      <link rel="shortcut icon" type="image/png" href="/static/assets/images/logos/logo1.ico" />
+      <link rel="stylesheet" href="/static/assets/css/styles.min.css" />
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktYFUcE3evoEH3pWt5pw3hYbFZ9Y1GoCoUc8hZ9KW" crossorigin="anonymous">
+    </head>
+    
+    <body>
+      <!--  Body Wrapper -->
+      <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+        data-sidebar-position="fixed" data-header-position="fixed">
+        <!-- Sidebar Start -->
+        <aside class="left-sidebar">
+          <!-- Sidebar scroll-->
+          <div>
+            <div class="brand-logo d-flex align-items-center justify-content-between">
+              <a href="#" class="text-nowrap logo-img">
+                <img src="/static/assets/images/logos/logo.ico" alt="" />
+              </a>
+              <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+                <i class="ti ti-x fs-8"></i>
+              </div>
+            </div>
+            <!-- Sidebar navigation-->
+            <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+              <ul id="sidebarnav">
+                <li class="nav-small-cap">
+                  <i class="ti ti-dots nav-small-cap-icon fs-6"></i>
+                  <span class="hide-menu">Home</span>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="/admin_home" aria-expanded="false">
+                    <span>
+                      <img src="/static/assets/images/logos/home.png" style="width: 25px;">
+                    </span>
+                    <span class="hide-menu">Dashboard</span>
+                  </a>
+                </li>
+                <li class="nav-small-cap">
+                  <i class="ti ti-dots nav-small-cap-icon fs-6"></i>
+                  <span class="hide-menu">ACTIONS</span>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="/admin_view_users" aria-expanded="false">
+                    <span>
+                      <img src="/static/assets/images/logos/user.png" style="width: 25px;">
+                    </span>
+                    <span class="hide-menu">View Users</span>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="/admin_view_complaints" aria-expanded="false">
+                    <span>
+                     <img src="/static/assets/images/logos/complaint.png" style="width: 25px;">
+                    </span>
+                    <span class="hide-menu">View Complaints</span>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="/admin_change_password" aria-expanded="false">
+                    <span>
+                     <img src="/static/assets/images/logos/password.png" style="width: 25px;">
+                    </span>
+                    <span class="hide-menu">Change Password</span>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="/admin_view_news" aria-expanded="false">
+                      <span>
+                        <img src="/static/assets/images/logos/news.png" style="width: 25px;">
+                      </span>
+                      <span class="hide-menu">View News</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="/logout" aria-expanded="false">
+                    <span>
+                     <img src="/static/assets/images/logos/logout.png" style="width: 25px;">
+                    </span>
+                    <span class="hide-menu">Logout</span>
+                  </a>
+                </li>
+               </ul>
+            </nav>
+            <!-- End Sidebar navigation -->
+          </div>
+          <!-- End Sidebar scroll-->
+        </aside>
+        <!--  Sidebar End -->    

@@ -1,0 +1,158 @@
+<!-- 
+
+    <center>
+    <h1 >Register</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <th>First Name :</th>
+                <td><input type="text" id="fname" name="fname" required></td>
+            </tr>
+            <tr>
+                <th>Last Name :</th>
+                <td><input type="text" id="lname" name="lname" required></td>
+            </tr>
+            <tr>
+                <th>Username :</th>
+                <td><input type="text" id="username" name="username" required></td>
+            </tr>
+            <tr>
+                <th>Email :</th>
+                <td><input type="email" id="email" name="email" required></td>
+            </tr>
+            <tr>
+                <th>Profile :</th>
+                <td><input type="file" id="profile" name="profile" required></td>
+            </tr>    
+            <tr>
+                <th>Gender : </th>
+                <th>Male<input type="radio" id="male" name="gender" value="male" required>
+                            Female<input type="radio" id="femaleS" name="gender" value="female" required></th>
+            </tr>
+            <tr>
+                <th>Phone No:</th>
+                <td><input type="tel" id="phone" name="phone" maxlength=10 required></td>
+            </tr>
+            <tr>
+                <th>Create Password :</th>
+                <td><input type="password" id="password" name="password" required></td>
+            </tr>
+            <tr>
+                <th>Confirm Password :</th>
+                <td><input type="password" id="confirmPassword" name="confirmPassword" required></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td><input type="submit" name="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+    <br>
+    Already have an account<a href="/login">Login here.</a>
+    </centre>   
+\ -->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ohari.com</title>
+  <link rel="shortcut icon" type="image/png" href="/static/assets/images/logos/logo1.ico" />
+  <link rel="stylesheet" href="/static/assets/css/styles.min.css" />
+</head>
+
+<body>
+  <!--  Body Wrapper -->
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+    <div
+      class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
+      <div class="d-flex align-items-center justify-content-center w-100">
+        <div class="row justify-content-center w-100">
+          <div class="col-md-8 col-lg-6 col-xxl-3">
+            <div class="card mb-0">
+              <div class="card-body">
+                <a href="/" class="text-nowrap logo-img text-center d-block py-3 w-100">
+                  <img src="/static/assets/images/logos/logo.ico" alt="">
+                </a>
+                <p class="text-center">Register</p>
+                <form method="post" action="" enctype="multipart/form-data" >
+                  <div class="mb-3">
+                    <label for="fname" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="fname" name="fname" required aria-describedby="textHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="lname" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lname" name="lname" aria-describedby="textHelp" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" required aria-describedby="textHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="username" class="form-label">Profile Picture</label>
+                    <input type="file" class="form-control" id="profile" name="profile" required aria-describedby="textHelp">
+                  </div>
+                  <div class="form-checdarkk">
+                    <label for="Gender" class="form-label">Gender :</label>
+                    <label class="form-label" for="male" >Male </label>
+                    <input  type="radio" class="form-check-input primary" id="male" name="gender" value="male" checked >
+                    <label class="form-label" for="female">Female </label>
+                    <input type= "radio" class="form-check-input primary" id="female" name="gender" value="female"  >
+                  </div>
+                  <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel"  class="form-control" id="phone" name="phone" maxlength=10 required aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" type="email" id="email" name="email" required aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-4">
+                    <label for="password" class="form-label"> Create Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                  </div>
+                  <div class="mb-4">
+                    <label for="confirmPassword " class="form-label">Confirm Password </label>
+                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                  </div>
+                  <input type="submit" name="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4" value="Submit">
+                  <div class="d-flex align-items-center justify-content-center">
+                    <p class="fs-4 mb-0 fw-bold">Already have an Account?</p>
+                    <a class="text-primary fw-bold ms-2" href="/login">Sign In</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/static/assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="/static/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  
+<script>
+  function validatePasswords() {
+      var newPassword = document.getElementById("newe").value;
+      var confirmPassword = document.getElementById("password").value;
+
+      if (newPassword !== confirmPassword) {
+          alert("New Password and Confirm Password do not match.");
+          return false;
+      }
+
+      if (newPassword.length < 6) {
+          alert("Password should be at least 6 characters long.");
+          return false;
+      }
+
+      return true;
+  }
+</script>
+
+</body>
+
+</html>
