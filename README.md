@@ -321,7 +321,9 @@ This project is primarily for academic and demonstration purposes.
 #  Author
 
 Thomas Mathew
+
 B.Tech Graduate
+
 Aspiring AI & Software Developer
 
 ---
