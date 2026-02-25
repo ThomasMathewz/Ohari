@@ -92,7 +92,7 @@ def admin_home(request):
 
     # Function to fetch stock-related news
     def get_stock_news():
-        API_KEY = "d1bc02bacbbc4d50a7f66a15d5c38cb0"
+        API_KEY = "Paste_API_Key_here"
         NEWS_URL = f"https://newsapi.org/v2/everything?q=stock market&apiKey={API_KEY}"
         
         response = requests.get(NEWS_URL)
@@ -141,7 +141,7 @@ def user_home(request):
 
     # Function to fetch stock-related news
     def get_stock_news():
-        API_KEY = "d1bc02bacbbc4d50a7f66a15d5c38cb0"
+        API_KEY = "Paste_API_Key_here"
         NEWS_URL = f"https://newsapi.org/v2/everything?q=stock market&apiKey={API_KEY}"
         
         response = requests.get(NEWS_URL)
@@ -178,7 +178,7 @@ def admin_view_news(request):
     import requests
     from django.shortcuts import render
 
-    API_KEY = "d1bc02bacbbc4d50a7f66a15d5c38cb0"
+    API_KEY = "Paste_API_Key_here"
     company = request.GET.get("company", "stock market")  # Default to "stock market" if no company is selected
     NEWS_URL = f"https://newsapi.org/v2/everything?q={company}&apiKey={API_KEY}"
 
@@ -242,7 +242,7 @@ def user_view_news(request):
     import requests
     from django.shortcuts import render
 
-    API_KEY = "d1bc02bacbbc4d50a7f66a15d5c38cb0"
+    API_KEY = "Paste_API_Key_here"
     company = request.GET.get("company", "stock market")  # Default to "stock market" if no company is selected
     NEWS_URL = f"https://newsapi.org/v2/everything?q={company}&apiKey={API_KEY}"
 
@@ -300,7 +300,7 @@ def predict_u(request):
     from io import BytesIO
 
     # ------------------------------------------
-    # 🚀 1. Fetch Historical Stock Data (6 Months)
+    #  1. Fetch Historical Stock Data (6 Months)
     # ------------------------------------------
     def get_stock_data(ticker, period='6mo', interval='1d'):
         data = yf.download(ticker, period=period, interval=interval)
@@ -310,7 +310,7 @@ def predict_u(request):
         return data
 
     # ------------------------------------------
-    # 📰 2. Fetch and Perform Sentiment Analysis on News
+    #  2. Fetch and Perform Sentiment Analysis on News
     # ------------------------------------------
     def get_news_sentiment(ticker):
         api_url = f'https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers={ticker}&apikey=YOUR_API_KEY'
@@ -334,14 +334,14 @@ def predict_u(request):
             return 0
 
     # ------------------------------------------
-    # 🧠 3. Sentiment Analysis Using TextBlob
+    #  3. Sentiment Analysis Using TextBlob
     # ------------------------------------------
     def get_sentiment(text):
         blob = TextBlob(text)
         return blob.sentiment.polarity
 
     # ------------------------------------------
-    # 🧩 4. Prepare Data for LSTM Model
+    #  4. Prepare Data for LSTM Model
     # ------------------------------------------
     def prepare_data(data, sentiment_score, lookback=60):
         # Add Sentiment as a Feature
@@ -366,7 +366,7 @@ def predict_u(request):
         return X, y, scaler
 
     # ------------------------------------------
-    # 📈 5. Build LSTM Model
+    #  5. Build LSTM Model
     # ------------------------------------------
     def build_lstm_model(input_shape):
         model = Sequential()
@@ -383,7 +383,7 @@ def predict_u(request):
         return model
 
     # ------------------------------------------
-    # 🧪 6. Train the Model
+    #  6. Train the Model
     # ------------------------------------------
     def train_model(model, X_train, y_train, epochs=10, batch_size=32):
         model.fit(X_train, y_train, batch_size=batch_size, epochs=epochs)
@@ -427,7 +427,7 @@ def predict_u(request):
         # Return data URI to embed in HTML
         return f"data:image/png;base64,{graph_base64}"
     # ------------------------------------------
-    # 🚀 9. Run the Full Pipeline
+    #  9. Run the Full Pipeline
     # ------------------------------------------
     ticker=data
     # Get Stock Data and Sentiment Score
@@ -443,7 +443,7 @@ def predict_u(request):
 
     # Predict Next Day Price
     predicted_price = predict_next_day(model, stock_data, scaler)
-    print(f"📊 Predicted next day price for {ticker}: ${predicted_price:.2f}")
+    print(f" Predicted next day price for {ticker}: ${predicted_price:.2f}")
     # Generate graph in base64
     graph_url = plot_to_base64(stock_data, predicted_price, ticker)
      
@@ -460,7 +460,7 @@ from django.http import JsonResponse
 
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key="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",  # Replace with your actual API key
+    api_key="Paste_API_Key_here",  # Replace with your actual API key
 )
 
 def stock_ai_assistant(request):
