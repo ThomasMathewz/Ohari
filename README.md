@@ -329,5 +329,3 @@ Aspiring AI & Software Developer
 ---
 
 
-Just tell me which version you want.
-
